@@ -1,7 +1,10 @@
 .gigs {
+  min-height: 92vh;
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #3A1078; // Purple background color
+  color: #FFFFFF; // White text color
 
   .container {
     width: 1400px;
@@ -14,14 +17,15 @@
       font-weight: 300;
       text-transform: uppercase;
       font-size: 13px;
-      color: #555;
+      color: #CCCCCC; // Light grey color for breadcrumbs
     }
 
     h1 {
+      color: #FFFFFF; // White color for headings
     }
 
     p {
-      color: #999;
+      color: #999999; // Light grey color for paragraphs
       font-weight: 300;
     }
 
@@ -35,24 +39,24 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: #555;
+        color: #CCCCCC; // Light grey color for menu text
         font-weight: 300;
 
         input {
           padding: 5px;
-          border: 1px solid lightgrey;
+          border: 1px solid #CCCCCC; // Light grey border
           border-radius: 5px;
           outline: none;
 
           &::placeholder {
-            color: #999;
+            color: #999999; // Light grey placeholder color
           }
         }
 
         button {
           padding: 5px 10px;
-          background-color: #1dbf73;
-          color: white;
+          background-color: #1dbf73; // Green background color for button
+          color: #FFFFFF; // White text color for button
           border: none;
           font-weight: 500;
           border-radius: 5px;
@@ -67,12 +71,13 @@
         gap: 10px;
 
         .sortBy {
-          color: #555;
+          color: #CCCCCC; // Light grey color for sortBy text
           font-weight: 300;
         }
 
         .sortType {
           font-weight: 500;
+          color: #FFFFFF; // White color for sortType text
         }
 
         img {
@@ -82,8 +87,8 @@
 
         .rightMenu {
           padding: 20px;
-          background-color: white;
-          border: 0.5px solid lightgrey;
+          background-color: #FFFFFF; // White background color for rightMenu
+          border: 0.5px solid #CCCCCC; // Light grey border
           border-radius: 5px;
           position: absolute;
           top: 30px;
@@ -92,7 +97,7 @@
           display: flex;
           flex-direction: column;
           gap: 20px;
-          color: #555;
+          color: #555555; // Dark grey color for rightMenu text
 
           span {
             cursor: pointer;
@@ -105,6 +110,28 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        padding: 5px 10px;
+        border: 1px solid #CCCCCC; // Light grey border
+        background-color: #FFFFFF; // White background color
+        cursor: pointer;
+        border-radius: 5px;
+        color: #000000; // Black text color
+
+        &.active {
+          background-color: #1dbf73; // Green background color for active button
+          color: #FFFFFF; // White text color for active button
+          border: none;
+        }
+      }
     }
   }
 }

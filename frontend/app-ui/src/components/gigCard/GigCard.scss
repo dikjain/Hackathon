@@ -3,9 +3,15 @@
   height: 400px;
   border-radius: 10px;
   overflow: hidden;
-  // border: 1px solid rgb(237, 236, 236);
   border: 1px solid rgb(228, 228, 228);
   margin-bottom: 40px;
+  background-color: #FFFFFF; // White background color for the card
+  color: #000000; // Black text color for the card
+
+  &.purple-theme {
+    background-color: #3A1078; // Purple background color for the card
+    color: #FFFFFF; // White text color for the card
+  }
 
   img {
     width: 100%;
@@ -31,8 +37,7 @@
         object-fit: cover;
       }
 
-      span {
-      }
+   
     }
 
     p {

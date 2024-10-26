@@ -4,6 +4,7 @@ import connectDB from "./db/db.js"
 import cookieParser from "cookie-parser"
 import userRoutes from "./routes/user.route.js"
 import gigRoutes from "./routes/Gigs.route.js"
+import chatRoutes from "./routes/chatRoutes.js"
 import http from "http"
 import dotenv from "dotenv";
 
@@ -24,7 +25,7 @@ app.use(cors({
 
 app.use("/api/user", userRoutes);
 app.use("/api/gigs", gigRoutes);
-
+app.use("/api/chat", chatRoutes);
 dotenv.config();
 
 app.get("/", (req, res) => {

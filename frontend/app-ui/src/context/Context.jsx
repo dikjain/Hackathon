@@ -9,6 +9,7 @@ const MyProvider = ({ children }) => {
   const [signup, setSignup] = useState(null);
   const [load, setLoad] = useState(false);
   const [shownav, setShownav] = useState(true);
+  const [currgig , setcurrgig] = useState(null)
 
   return (
     <MyContext.Provider value={{
@@ -20,7 +21,9 @@ const MyProvider = ({ children }) => {
       load,
       setLoad,
       shownav,
-      setShownav
+      setShownav,
+      currgig,
+      setcurrgig
     }}>
       {children}
     </MyContext.Provider>

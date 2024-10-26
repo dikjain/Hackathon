@@ -7,14 +7,14 @@ import { Spinner } from "@chakra-ui/react"; // Import Chakra UI Spinner
 
 const Add = () => {
   const { userInfo, navigate ,setUserInfo} = useContext(MyContext);
-  useEffect(()=>{
+  useEffect (()=>{
     if(!userInfo){
       setUserInfo(JSON.parse(localStorage.getItem("userInfo")))
     }
   },[userInfo])
   const [formData, setFormData] = useState({
     title: "",
-    category: "",
+    category: "design", // Set default value to "design"
     coverImage: null,
     uploadImages: [],
     description: "",
@@ -113,7 +113,7 @@ const Add = () => {
               onChange={handleChange}
             />
             <label htmlFor="category">Category</label>
-            <select name="category" id="cats" onChange={handleChange}>
+            <select name="category" id="cats" onChange={handleChange} value={formData.category}>
               <option value="design">Design</option>
               <option value="web">Web Development</option>
               <option value="animation">Animation</option>

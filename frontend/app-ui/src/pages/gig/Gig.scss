@@ -1,6 +1,13 @@
+
+.slider{
+  display: flex;
+  flex-wrap: wrap;
+}
 .gig {
   display: flex;
   justify-content: center;
+  background-color: #3A1078; // Set background color to match the home page theme
+  color: #FFFFFF; // Set text color to white for better contrast
 
   .container {
     width: 1400px;
@@ -18,10 +25,11 @@
         font-weight: 300;
         text-transform: uppercase;
         font-size: 13px;
-        color: #555;
+        color: #CCCCCC; // Light grey color for breadcrumbs
       }
 
       h1 {
+        color: #FFFFFF; // White color for headings
       }
 
       .user {
@@ -39,6 +47,7 @@
         span {
           font-size: 14px;
           font-weight: 500;
+          color: #FFFFFF; // White color for user name
         }
 
         .stars {
@@ -54,13 +63,13 @@
           span {
             font-size: 14px;
             font-weight: bold;
-            color: #ffc108;
+            color: #FFC108; // Gold color for stars
           }
         }
       }
 
       .slider {
-        background-color: #F5F5F5;
+        background-color: #4A148C; // Darker shade of the theme color for slider background
         img {
           max-height: 500px;
           object-fit: contain;
@@ -69,12 +78,13 @@
 
       h2 {
         font-weight: 400;
+        color: #FFFFFF; // White color for subheadings
       }
 
       p {
         font-weight: 300;
         line-height: 25px;
-        color: #555;
+        color: #CCCCCC; // Light grey color for paragraphs
       }
 
       .seller {
@@ -113,21 +123,22 @@
               span {
                 font-size: 14px;
                 font-weight: bold;
-                color: #ffc108;
+                color: #FFC108; // Gold color for stars
               }
             }
 
             button {
-              background-color: white;
+              background-color: #4A148C; // Darker shade of the theme color for button background
               border-radius: 5px;
-              border: 1px solid gray;
+              border: 1px solid #CCCCCC; // Light grey border
               padding: 10px;
+              color: #FFFFFF; // White color for button text
             }
           }
         }
 
         .box {
-          border: 1px solid lightgray;
+          border: 1px solid #CCCCCC; // Light grey border
           border-radius: 5px;
           padding: 20px;
           margin-top: 20px;
@@ -146,13 +157,14 @@
 
               .title {
                 font-weight: 300;
+                color: #FFFFFF; // White color for item titles
               }
             }
           }
 
           hr {
             height: 0;
-            border: 0.5px solid lightgray;
+            border: 0.5px solid #CCCCCC; // Light grey border
             margin-bottom: 20px;
           }
         }
@@ -178,7 +190,7 @@
               display: flex;
               align-items: center;
               gap: 10px;
-              color: gray;
+              color: #CCCCCC; // Light grey color for country
 
               img {
                 width: 20px;
@@ -198,7 +210,7 @@
             span {
               font-size: 14px;
               font-weight: bold;
-              color: #ffc108;
+              color: #FFC108; // Gold color for stars
             }
           }
 
@@ -215,7 +227,7 @@
 
         hr {
           height: 0;
-          border: 0.5px solid lightgray;
+          border: 0.5px solid #CCCCCC; // Light grey border
           margin: 50px 0px;
         }
       }
@@ -223,7 +235,7 @@
 
     .right {
       flex: 1;
-      border: 1px solid lightgray;
+      border: 1px solid #CCCCCC; // Light grey border
       padding: 20px;
       border-radius: 5px;
       display: flex;
@@ -233,6 +245,7 @@
       max-height: 500px;
       position: sticky;
       top: 150px;
+      background-color: #4A148C; // Darker shade of the theme color for right section background
 
       .price {
         display: flex;
@@ -241,15 +254,17 @@
 
         h2{
           font-weight: 300;
+          color: #FFFFFF; // White color for price
         }
 
         h3{
           font-weight: 500;
+          color: #FFFFFF; // White color for price title
         }
       }
 
       p{
-        color: gray;
+        color: #CCCCCC; // Light grey color for description
         margin: 10px 0px;
       }
 
@@ -258,6 +273,7 @@
         align-items: center;
         justify-content: space-between;
         font-size: 14px;
+        color: #FFFFFF; // White color for details
 
         .item {
           display: flex;
@@ -276,7 +292,7 @@
           align-items: center;
           gap: 10px;
           font-weight: 300;
-          color: gray;
+          color: #CCCCCC; // Light grey color for features
           margin-bottom: 5px;
 
           img{
@@ -286,9 +302,9 @@
       }
 
       button{
-        background-color: #1dbf73;
+        background-color: #1dbf73; // Green color for button background
         padding: 10px;
-        color: white;
+        color: #FFFFFF; // White color for button text
         font-weight: 500;
         border: none;
         font-size: 18px;
