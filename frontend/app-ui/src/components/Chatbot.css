@@ -1,14 +1,18 @@
 .chatbot-container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 300px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 40px black;
+    background: linear-gradient(45deg, rgb(107, 24, 231), rgb(107, 24, 231), #6b18e7, rgb(107, 24, 231));
+    z-index: 2147483647; /* Maximum z-index value */
   }
   
   .chatbot-messages {
-    height: 400px;
+    height: 300px;
     overflow-y: auto;
     margin-bottom: 20px;
     padding: 10px;
@@ -23,7 +27,7 @@
     max-width: 80%;
   }
   
-  .user {
+  .userz{
     background-color: #e6f2ff;
     align-self: flex-end;
     margin-left: auto;

@@ -145,8 +145,8 @@ function App() {
       <Route path="/add" element={<Add />} />
       <Route path="/gig/:id" element={<Gig />} />
       <Route path="/function" element={<FunctionPage/>} />
-      <Route path="/chatbot" element={<Chatbot/>} />
       </Routes>
+      {shownav && <Chatbot/>}
     </>
   );
 }

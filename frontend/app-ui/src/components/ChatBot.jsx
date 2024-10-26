@@ -6,10 +6,13 @@ function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    createSession();
-  }, []);
+    if (isVisible) {
+      createSession();
+    }
+  }, [isVisible]);
 
   const createSession = async () => {
     setIsLoading(true);
@@ -33,7 +36,7 @@ function Chatbot() {
     e.preventDefault();
     if (!inputMessage.trim()) return;
 
-    setMessages(prev => [...prev, { type: 'user', content: inputMessage }]);
+    setMessages(prev => [...prev, { type: 'userz', content: inputMessage }]);
     setInputMessage('');
     setIsLoading(true);
 
@@ -58,27 +61,38 @@ function Chatbot() {
     }
   };
 
+  const toggleVisibility = () => {
+    setIsVisible(prev => !prev);
+  };
+
   return (
-    <div className="chatbot-container">
-      <div className="chatbot-messages">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.type}`}>
-            {message.content}
+    <>
+      <button onClick={toggleVisibility}>
+        {isVisible ? 'Hide Chatbot' : 'Show Chatbot'}
+      </button>
+      {isVisible && (
+        <div className="chatbot-container">
+          <div className="chatbot-messages">
+            {messages.map((message, index) => (
+              <div key={index} className={`message ${message.type}`}>
+                {message.content}
+              </div>
+            ))}
+            {isLoading && <div className="message bot">Thinking...</div>}
           </div>
-        ))}
-        {isLoading && <div className="message bot">Thinking...</div>}
-      </div>
-      <form onSubmit={submitQuery} className="chatbot-input-form">
-        <input
-          type="text"
-          value={inputMessage}
-          onChange={(e) => setInputMessage(e.target.value)}
-          placeholder="Type your message here..."
-          disabled={isLoading}
-        />
-        <button type="submit" disabled={isLoading}>Send</button>
-      </form>
-    </div>
+          <form onSubmit={submitQuery} className="chatbot-input-form">
+            <input
+              type="text"
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              placeholder="Type your message here..."
+              disabled={isLoading}
+            />
+            <button type="submit" disabled={isLoading}>Send</button>
+          </form>
+        </div>
+      )}
+    </>
   );
 }
 
