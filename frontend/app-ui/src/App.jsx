@@ -20,6 +20,7 @@ import Navbar from './components/navbar/Navbar';
 import FunctionPage from './pages/FunctionPage/FunctionPage';
 import { MyContext } from './context/Context';
 import Profilepage from './pages/ProfilePage/Profilepage';
+import Chatbot from './components/ChatBot';
 
 function App() {
   gsap.registerPlugin(ScrollTrigger)
@@ -144,6 +145,7 @@ function App() {
       <Route path="/add" element={<Add />} />
       <Route path="/gig/:id" element={<Gig />} />
       <Route path="/function" element={<FunctionPage/>} />
+      <Route path="/chatbot" element={<Chatbot/>} />
       </Routes>
     </>
   );
