@@ -8,6 +8,7 @@ import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
 import { Textarea } from "@chakra-ui/textarea";
 import { Switch } from "@chakra-ui/switch"; // Import Switch component
+import "./Register.css"
 
 function Register() {
   const [datas, setdata] = useState({ email: '', password: '', name: '', bio: '' });
@@ -123,85 +124,85 @@ function Register() {
   };
 
   return (
-    <VStack spacing="5px" align="stretch" height="110%" width="90%">
+    <VStack spacing="5px" align="stretch" height="fit-content" width="90%">
       <FormControl id="name" isRequired>
-        <FormLabel color="green.400">Name</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Name</FormLabel>
         <Input
           placeholder="Enter Your Name"
           name="name"
           onChange={handleChange}
-          bg="black" // Black background
-          color="green.400" // Neon green text
-          borderColor="green.400" // Neon green border
+          bg="rgb(204, 153, 255)" // Lightish purple background
+          color="white" // White text
+          borderColor="rgb(153, 102, 255)" // Lightish purple border
           _placeholder={{ color: "gray.500" }} // Placeholder color
         />
       </FormControl>
       <FormControl id="email" isRequired>
-        <FormLabel color="green.400">Email Address</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Email Address</FormLabel>
         <Input
           type="email"
           placeholder="Enter Your Email Address"
           name="email"
           onChange={handleChange}
-          bg="black" // Black background
-          color="green.400" // Neon green text
-          borderColor="green.400" // Neon green border
+          bg="rgb(204, 153, 255)" // Lightish purple background
+          color="white" // White text
+          borderColor="rgb(153, 102, 255)" // Lightish purple border
           _placeholder={{ color: "gray.500" }} // Placeholder color
         />
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel color="green.400">Password</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Password</FormLabel>
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
             placeholder="Enter Password"
             name="password"
             onChange={handleChange}
-            bg="black" // Black background
-            color="green.400" // Neon green text
-            borderColor="green.400" // Neon green border
+            bg="rgb(204, 153, 255)" // Lightish purple background
+            color="white" // White text
+            borderColor="rgb(153, 102, 255)" // Lightish purple border
             _placeholder={{ color: "gray.500" }} // Placeholder color
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick} colorScheme="green">
+            <Button h="1.75rem" size="sm" onClick={handleClick} colorScheme="purple">
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <FormControl id="bio">
-        <FormLabel color="green.400">Bio</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Bio</FormLabel>
         <Textarea
           placeholder="Enter Your Bio"
           name="bio"
           onChange={handleChange}
-          bg="black" // Black background
-          color="green.400" // Neon green text
-          borderColor="green.400" // Neon green border
+          bg="rgb(204, 153, 255)" // Lightish purple background
+          color="white" // White text
+          borderColor="rgb(153, 102, 255)" // Lightish purple border
           _placeholder={{ color: "gray.500" }} // Placeholder color
         />
       </FormControl>
       <FormControl id="pic">
-        <FormLabel color="green.400">Upload your Picture</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Upload your Picture</FormLabel>
         <Input
           type="file"
           p={1.5}
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
-          bg="black" // Black background
-          color="green.400" // Neon green text
+          bg="rgb(204, 153, 255)" // Lightish purple background
+          color="white" // White text
         />
       </FormControl>
       <FormControl id="isSeller">
-        <FormLabel color="green.400">Are you a Gig Provider?</FormLabel>
+        <FormLabel color="rgb(153, 102, 255)">Are you a Gig Provider?</FormLabel>
         <Switch
           isChecked={isSeller}
           onChange={handleSellerToggle}
-          colorScheme="green"
+          colorScheme="purple"
         />
       </FormControl>
       <Button
-        colorScheme="green" // Neon green button
+        colorScheme="purple" // Purple button
         width="100%"
         h="40px"
         style={{ marginTop: 15 }}

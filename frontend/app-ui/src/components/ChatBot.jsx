@@ -6,7 +6,7 @@ function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (isVisible) {
@@ -67,9 +67,9 @@ function Chatbot() {
 
   return (
     <>
-      <button onClick={toggleVisibility}>
+{      <button className='chatbot-toggle' onClick={toggleVisibility}>
         {isVisible ? 'Hide Chatbot' : 'Show Chatbot'}
-      </button>
+      </button>}
       {isVisible && (
         <div className="chatbot-container">
           <div className="chatbot-messages">

@@ -1,12 +1,19 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { MyContext } from '../../context/Context';
-import { useToast } from '@chakra-ui/react';  // Import the useToast hook from Chakra UI
+import { useToast } from '@chakra-ui/react';
+import { Button } from "@chakra-ui/button";
+import { FormControl, FormLabel } from "@chakra-ui/form-control";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
+import { VStack } from "@chakra-ui/layout";
+import "./Login.scss"
 
 function Login() {
   const [datas, setdata] = useState({ email: '', password: '' });
   const { setUserInfo, navigate, setSignup, setShownav } = useContext(MyContext);
-  const toast = useToast();  // Initialize the toast hook
+  const toast = useToast();
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
 
   const handleChange = (event) => {
     setdata({ ...datas, [event.target.name]: event.target.value });
@@ -44,14 +51,12 @@ function Login() {
       setUserInfo(data);
       console.log(userInfo) 
       if (data._id && data.email && data.name) {
-        // Show a success toast when login is successful
         showToast("Login successful!", "success");
         navigate("/");
         setShownav(true)
       }
 
     } catch (error) {
-      // Show an error toast when there's an issue
       showToast(
         error.response && error.response.data && error.response.data.msg
           ? error.response.data.msg
@@ -62,37 +67,56 @@ function Login() {
   };
 
   return (
-    <div className='w-[90%] h-[90%] my-[20px] bg-[violet] rounded-xl p-2 flex flex-col items-center justify-around'>
-      <h1 className='text-white text-3xl font-bold font-sans'>Login</h1>
-      <form onSubmit={sendData} className='w-full flex flex-col items-center'>
-        <input
-          name='email'
+    <VStack spacing="5px" align="stretch" height="110%" width="90%">
+      <FormControl id="email" isRequired>
+        <FormLabel color="rgb(153, 102, 255)">Email Address</FormLabel>
+        <Input
+          type="email"
+          placeholder="Enter Your Email Address"
+          name="email"
           onChange={handleChange}
-          type='text'
-          placeholder='Email'
-          className='border-2 my-[3px] bg-black border-gray-200 p-2 w-full rounded-xl'
+          bg="rgb(204, 153, 255)"
+          color="white"
+          borderColor="rgb(153, 102, 255)"
+          _placeholder={{ color: "gray.500" }}
         />
-        <input
-          name='password'
-          onChange={handleChange}
-          type='password'
-          placeholder='Password'
-          className='border-2 my-[3px] bg-black border-gray-200 p-2 w-full rounded-xl mt-2'
-        />
-        <button
-          type='submit'
-          className='bg-blue-500 my-[8px] text-white p-2 rounded-xl w-full'
-        >
-          Login
-        </button>
-      </form>
-      <p className='text-white text-sm mt-2'>
+      </FormControl>
+      <FormControl id="password" isRequired>
+        <FormLabel color="rgb(153, 102, 255)">Password</FormLabel>
+        <InputGroup size="md">
+          <Input
+            type={show ? "text" : "password"}
+            placeholder="Enter Password"
+            name="password"
+            onChange={handleChange}
+            bg="rgb(204, 153, 255)"
+            color="white"
+            borderColor="rgb(153, 102, 255)"
+            _placeholder={{ color: "gray.500" }}
+          />
+          <InputRightElement width="4.5rem">
+            <Button h="1.75rem" size="sm" onClick={handleClick} colorScheme="purple">
+              {show ? "Hide" : "Show"}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </FormControl>
+      <Button
+        colorScheme="purple"
+        width="100%"
+        h="40px"
+        style={{ marginTop: 15 }}
+        onClick={sendData}
+      >
+        Login
+      </Button>
+      <p className="text-white text-sm mt-2">
         Don't have an account?{" "}
-        <a onClick={() => setSignup("signup")} className='text-blue-500 cursor-pointer'>
+        <a onClick={() => setSignup("signup")} className="cursor-pointer text-blue-500">
           Sign Up
         </a>
       </p>
-    </div>
+    </VStack>
   );
 }
 

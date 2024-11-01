@@ -7,7 +7,7 @@ import gigRoutes from "./routes/Gigs.route.js"
 import chatRoutes from "./routes/chatRoutes.js"
 import http from "http"
 import dotenv from "dotenv";
-
+import path from "path";
 
 const app = express();
 
@@ -27,6 +27,14 @@ app.use("/api/user", userRoutes);
 app.use("/api/gigs", gigRoutes);
 app.use("/api/chat", chatRoutes);
 dotenv.config();
+
+const __dirname = path.resolve();
+
+app.use(express.static('dist'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
+});
+
 
 app.get("/", (req, res) => {
   res.send("hello world");
