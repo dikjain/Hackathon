@@ -10,8 +10,9 @@ import Messages from './pages/messages/Messages';
 import Message from './pages/message/Message';
 import Add from './pages/add/Add';
 import Gig from './pages/gig/Gig';
-import Register from './pages/register/Register';
-import Login from './pages/login/Login';
+
+
+
 import "./index.css"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
